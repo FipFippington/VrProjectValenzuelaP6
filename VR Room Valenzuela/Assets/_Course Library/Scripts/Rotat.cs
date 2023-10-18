@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class Rotat : MonoBehaviour
 {
-    void Start()
-    {
-     
-    }
-
+    public GameObject reticleBlack;
+    private readonly float speed = 50.0f;
+    private Vector3 vector3;
     // Update is called once per frame
     void Update()
     {
         if (Application.isPlaying)
         {
-            transform.Rotate(0.0f, 2.0f, 0.0f);
+            vector3 = new Vector3(0,1,0);
+            transform.Rotate(speed * Time.deltaTime *  vector3);
         }
     } 
 }
